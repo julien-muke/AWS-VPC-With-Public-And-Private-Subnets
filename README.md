@@ -35,6 +35,35 @@ Navigate to the VPC console, click on the left hand panel and click subnet.
 💡 PRO TIP: Filter your VPC console with the "DemoVPC" we just created. This hides components already created for your default VPC. Shown in screenshot below.
 
 
+![Screenshot](/img/filter_vpc.png)
+
+
+
+We are creating 4 subnets - 2 Public Subnets in separate Availability Zone (AZ) and 2 Private Subnets in the same separate AZs
+
+1. Open the VPC console
+2. Click on "Subnets" on the left-hand panel
+3. Click "Create subnet" button in the top right hand corner
+4. Click the drop down and select the VPC named "Demo VPC" that we created in Step 1
+5. Name Subnet 1 "Public Subnet A"
+6. Choose an AZ "a" for whatever region you are within. For example: "us-east-1a"
+7. Set the IPv4 CIDR block to 10.0.0.0/24 [10.0.0.0 - 10.0.0.255] (that's 256 IP addresses)
+8. Then click the button "Add new subnet" at the bottom left hand corner. We will complete similar steps shown in 5-7 for the other 3 subnets we will create.
+9. Name Subnet 2 "Public Subnet B", Choose AZ "b", Set the IPv4 CIDR block to 10.0.1.0/24 [10.0.1.0 - 10.0.1.255], click "Add new subnet" at the bottom left hand corner
+1. Name Subnet 3 "Private Subnet A", Choose AZ "a" (same AZ as Subnet 1), Set the IPv4 CIDR block to 10.0.16.0/20 [10.0.16.0 - 10.0.31.255] (that's 4096 IP addresses), click "Add new subnet" at the bottom left hand corner
+11. Name Subnet 4 "Private Subnet B", Choose AZ "b" (same AZ as Subnet 2), Set the IPv4 CIDR block to 10.0.32.0/20 [10.0.32.0 - 10.0.47.255]
+12. Click the "Create subnet" button in the bottom right hand corner.
+
+### Subnet 1 and 2
+
+![Screenshot](/img/subnet_1&2.png)
+
+
+### Subnet 3 and 4
+
+
+![Screenshot](/img/subnet_3&4.png)
+
 
 
 Click on add integration, the drop down lets us specify what we want to do, we want to select
