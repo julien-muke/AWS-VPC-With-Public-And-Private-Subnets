@@ -65,4 +65,13 @@ We are creating 4 subnets - 2 Public Subnets in separate Availability Zone (AZ) 
 ![Screenshot](/img/subnet_3&4.png)
 
 
+## 👉 Step 3 - Create internet gateway and route tables
+
+1. Open the VPC Console
+2. Click on "Internet gateways" on the left-hand panel
+3. Click "Create internet gateway" button in the top right hand corner
+4. Name the internet gateway "Demo Internet Gateway"
+5. Click "Create internet gateway" in the bottom right hand corner. DONE
+
+
 
