@@ -75,8 +75,54 @@ We are creating 4 subnets - 2 Public Subnets in separate Availability Zone (AZ) 
 1. Open the VPC Console
 2. Click on "Internet gateways" on the left-hand panel
 3. Click "Create internet gateway" button in the top right hand corner
+
+
+![Screenshot](/img/internet_GW.png)
+
+
 4. Name the internet gateway "Demo Internet Gateway"
-5. Click "Create internet gateway" in the bottom right hand corner. DONE
+5. Click "Create internet gateway" in the bottom right hand corner.
+
+
+![Screenshot](/img/create_internet_GW.png)
+
+
+
+### 👉 Attach the Internet Gateway to "Demo VPC"
+
+* Go back to the internet gateway dashboard
+* Select the newly created internet gateway called "Demo Internet Gateway"
+* Click the "Actions" dropdown button at the top right hand corner and click "Attach to VPC"
+
+
+![Screenshot](/img/attach_vpc.png)
+
+
+* Select the "DemoVPC" in the drop down and click "Attach internet gateway" button at the bottom right hand corner
+
+
+![Screenshot](/img/attach_vpc2.png)
+
+
+
+### 👉 Create the Route Tables
+
+A default route table has already been created for our created VPC. However, we will not use the default route table associated with our VPC. We will 3 route tables of our own (Public Route Table, Private Route Table A, Private Route Table B)
+
+
+* Open the VPC Console
+* Click on "Route tables" on the left-hand panel
+* Click "Create route table" button in the top right hand corner
+
+
+![Screenshot](/img/route_tables.png)
+
+
+* Name the 1st route table `Public-Route-Table`, select `DemoVPC`, click "Create route table" button at the bottom right hand corner.
+
+
+![Screenshot](/img/create_route_table.png)
+
 
 
 
