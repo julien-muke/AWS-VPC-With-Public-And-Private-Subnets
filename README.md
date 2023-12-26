@@ -54,9 +54,9 @@ We are creating 4 subnets - 2 Public Subnets in separate Availability Zone (AZ) 
 6. Choose an AZ "a" for whatever region you are within. For example: "us-east-1a"
 7. Set the IPv4 CIDR block to `10.0.0.0/24` [10.0.0.0 - 10.0.0.255] (that's 256 IP addresses)
 8. Then click the button "Add new subnet" at the bottom left hand corner. We will complete similar steps shown in 5-7 for the other 3 subnets we will create.
-9. Name Subnet 2 `Public Subnet B`, Choose AZ "b", Set the IPv4 CIDR block to `10.0.1.0/24` [10.0.1.0 - 10.0.1.255], click "Add new subnet" at the bottom left hand corner
-1. Name Subnet 3 `Private Subnet A`, Choose AZ "a" (same AZ as Subnet 1), Set the IPv4 CIDR block to `10.0.16.0/20` [10.0.16.0 - 10.0.31.255] (that's 4096 IP addresses), click "Add new subnet" at the bottom left hand corner
-11. Name Subnet 4 `Private Subnet B`, Choose AZ "b" (same AZ as Subnet 2), Set the IPv4 CIDR block to `10.0.32.0/20` [10.0.32.0 - 10.0.47.255]
+9. Name Subnet 2 `Public-Subnet-B`, Choose AZ "b", Set the IPv4 CIDR block to `10.0.1.0/24` [10.0.1.0 - 10.0.1.255], click "Add new subnet" at the bottom left hand corner
+1. Name Subnet 3 `Private-Subnet-A`, Choose AZ "a" (same AZ as Subnet 1), Set the IPv4 CIDR block to `10.0.16.0/20` [10.0.16.0 - 10.0.31.255] (that's 4096 IP addresses), click "Add new subnet" at the bottom left hand corner
+11. Name Subnet 4 `Private-Subnet-B`, Choose AZ "b" (same AZ as Subnet 2), Set the IPv4 CIDR block to `10.0.32.0/20` [10.0.32.0 - 10.0.47.255]
 12. Click the "Create subnet" button in the bottom right hand corner.
 
 ### 👉 Subnet 1 and 2
