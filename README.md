@@ -50,7 +50,7 @@ We are creating 4 subnets - 2 Public Subnets in separate Availability Zone (AZ) 
 ![Screenshot](/img/demo_vpc.png)
 
 
-5. Name Subnet 1 `Public Subnet A`
+5. Name Subnet 1 `Public-Subnet-A`
 6. Choose an AZ "a" for whatever region you are within. For example: "us-east-1a"
 7. Set the IPv4 CIDR block to `10.0.0.0/24` [10.0.0.0 - 10.0.0.255] (that's 256 IP addresses)
 8. Then click the button "Add new subnet" at the bottom left hand corner. We will complete similar steps shown in 5-7 for the other 3 subnets we will create.
