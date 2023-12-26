@@ -61,13 +61,13 @@ We are creating 4 subnets - 2 Public Subnets in separate Availability Zone (AZ) 
 
 ### 👉 Subnet 1 and 2
 
-![Screenshot](/img/PS_1&2.png)
+![Screenshot](/img/public_sn_1&2.png)
 
 
 ### 👉 Subnet 3 and 4
 
 
-![Screenshot](/img/PS_3&4.png)
+![Screenshot](/img/private_sn_3&4.png)
 
 
 ## 👉 Step 3 - Create Internet Gateway and Route Tables
