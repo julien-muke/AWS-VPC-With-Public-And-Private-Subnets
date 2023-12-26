@@ -125,4 +125,121 @@ A default route table has already been created for our created VPC. However, we 
 
 
 
+* Name the 2nd route table `Private-Route-Table-A`, select `DemoVPC`, click "Create route table" button at the bottom right hand corner.
+
+
+![Screenshot](/img/private_route_tableA.png)
+
+
+
+* Name the 3rd route table `Private-Route-Table-B`, select `DemoVPC`, click "Create route table" button at the bottom right hand corner.
+
+
+
+![Screenshot](/img/private_route_tableB.png)
+
+
+
+### 👉 Assign Subnets to Route Tables
+
+* Assign Public Subnets to "Public Route Table"
+* Go back to the route tables dashboard
+* Select "Public Route Table"
+* Click "Edit subnet associations" 
+
+
+
+![Screenshot](/img/assign_route_table.png)
+
+
+
+* Select `Public-Subnet-A` and `Public-Subnet-B` then click "Save associations" button in the bottom right hand corner 
+
+
+
+![Screenshot](/img/assign_A&B.png)
+
+
+
+### 👉 Assign Private Subnet to "Private Subnet A"
+
+* Go back to the route tables dashboard
+* Select `Private-Route-Table-A`
+* Click "Edit subnet associations"
+
+
+![Screenshot](/img/edit_private_RTA.png)
+
+
+
+* Select `Private-Subnet-A` and click "Save associations" button in teh bottom right hand corner 
+
+
+![Screenshot](/img/assign_privateA.png)
+
+
+### 👉 Assign Private Subnet to "Private Subnet B"
+
+Go back to the route tables dashboard
+Select `Private-Route-Table-B`
+Click "Edit subnet associations"
+
+
+![Screenshot](/img/edit_private_RTB.png)
+
+
+Select `Private-Subnet-B` and click "Save associations" button in teh bottom right hand corner
+
+
+
+![Screenshot](/img/assign_privateB.png)
+
+
+
+### 👉 Update Public Route Table to make "Public Subnet A" and "Public Subnet B" Public
+
+* Go back to the route tables dashboard
+* Select `Public-Route-Table`
+* Click "Edit routes"
+
+
+![Screenshot](/img/edit_route_table.png)
+
+
+Click "Add route", for Destination route select `0.0.0.0/0`, for Target select `Internet Gateway` and select `Demo-Internet-Gateway`, click "Save changes" button at the bottom right hand corner
+
+
+![Screenshot](/img/save_route_table.png)
+
+
+
+## 👉 Step 4 - Create NAT Gateway
+
+For high availability we will create 2 Create NAT Gateway. One in each AZ (One in Public Subnet A and One in Public Subnet B)
+
+* Open the VPC Console
+* Click on "NAT gateways" on the left-hand panel
+
+
+![Screenshot](/img/create_NAT.png)
+
+
+
+* Click "Create NAT gateway" button in the top right hand corner
+* Name the 1st Create NAT Gateway `NAT-Gateway-A`, Select `Public-Subnet-A` that we created in a previous step, click "Allocate Elastic IP" button, and click "Create NAT gateway" button in the bottom right hand corner
+
+
+![Screenshot](/img/save_NAT.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
