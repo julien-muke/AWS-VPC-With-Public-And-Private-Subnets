@@ -303,6 +303,38 @@ For high availability we will create 2 Create NAT Gateway. One in each AZ (One i
 
 
 
+## 👉 Step 6 - Create Private EC2 Instances
+
+Create Private Insance in Private Subnet A
+
+* Go back to the EC2 console
+* Click "Launch instances" button in the top right hand corner
+* Name the instance "Private Instance A"
+* Keep AMI as Linux, Keep architecutre 64-bit(x86), Keep instance type t2 micro (to stay within the free tier)
+* Key Pair: Click "Create new key pair", Name the keypair `VPCKeyPair`, keep everything else default and click "Create key pair" button at the bottom right hand corner - the private key pair file will be downloaded to your computer. Make sure to store this file in a known place on your computuer. We will have to use the contents in this file a later step
+
+
+
+![Screenshot](/img/keypair.png)
+
+
+
+* Edit Network Settings: Change the Default VPC to `DemoVPC`, Change subnet to `Private Subnet A`, DO NOT enable auto-assign public IP (this is our private instance and it should not have a public IP address)
+* Edit Security Group: Select "Create security group", name it `Private-Instance-SG`, Description: "Security group for private instance A and private instance B" (Optional), Allow SSH from Custom: Select the SG of the Bastion Host
+Click "Launch instance" button at the bottom right hand corner 
+
+
+
+![Screenshot](/img/private_instances1.png)
+![Screenshot](/img/private_instances2.png)
+![Screenshot](/img/private_instances3.png)
+
+
+
+
+
+
+
 
 
 
