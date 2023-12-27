@@ -439,7 +439,7 @@ Now we are ready to SSH into our Private Instance A via our Bastion host by usin
 * Make sure to hold Ctrl and press "C" to stop the ping.
 If your outcome is similar to what's shown below then your Bastion host has access to the internet 
 
-         🏆🏆🏆🏆🏆🏆
+
 
 ![Screenshot](/img/test6.png)
 
