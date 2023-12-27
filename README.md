@@ -423,7 +423,7 @@ Our uploaded VPCKeyPair.pem text file is formated for others to access it (curre
 
 Now we are ready to SSH into our Private Instance A via our Bastion host by using our keypair
 
-* Type "ssh ec2-user@INSERT YOUR PRIVATE IP ADDRESS YOU JUST COPIED -i VPCKeyPair.pem". Hit Enter. As an example Your code should look like this (your IP address will be different): "ssh ec2-user@10.0.19.224 -i VPCKeyPair.pem"
+* Type "ssh ec2-user@INSERT YOUR PRIVATE IP ADDRESS YOU JUST COPIED -i VPCKeyPair.pem". Hit Enter. As an example Your code should look like this (your IP address will be different): "ssh ec2-user@10.0.21.1 -i VPCKeyPair.pem"
 
 * A prompt will come up asking if your are sure you want to connect. Type "yes" and you should have successfully SSH into your Private Instance A via your bastion host.
 
