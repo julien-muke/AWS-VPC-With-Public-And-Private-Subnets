@@ -278,6 +278,29 @@ For high availability we will create 2 Create NAT Gateway. One in each AZ (One i
 
 
 
+## 👉 Step 5 - Create Bastion Host
+
+✏️ Note: For high availability, it would be best to have one bastion host in each AZ. However, for simplicity, we will only create one Bastion Host - located in Public Subnet A as shown in the "VPC Architecture Design".
+
+* Open the EC2 console
+* Click "Instances" on the left-hand panel
+* Click "Launch instances" button in the top right hand corner
+
+
+![Screenshot](/img/instances.png)
+
+
+* Name the instance `BastionHost`
+* Keep AMI as Linux, Keep architecutre 64-bit(x86), Keep instance type t2 micro (to stay within the free tier)
+* Key Pair: Select "Proceed without a key pair (Not recommended)" In this lab we will be using the EC2 Connect to SSH into our instance and to test our architecture. Thus, we will not need a key pair here. However, if you want to further secure your instance and if use your own SSH client then a key pair will be needed.
+* Edit Network Settings: Change the Default VPC to `DemoVPC`, Change subnet to `Public-Subnet-A`, Enable auto-assign public IP.
+* Edit Security Group (SG): Select "Create security group", name the SG `Bastion-Host-SG`, Description: "Security group for Bastion Host" (Optional), Allow SSH from anywhere, 0.0.0.0/0
+* Click "Launch instance" button at the bottom right hand corner 
+
+
+
+![Screenshot](/img/EC2.png)
+
 
 
 
