@@ -333,6 +333,134 @@ Click "Launch instance" button at the bottom right hand corner
 
 
 
+Create Private Instance in Private Subnet B
+
+* Go back to the EC2 console
+* Click "Launch instances" button in the top right hand corner
+* Name the instance "Private Instance B"
+* Keep AMI as Linux, Keep architecutre 64-bit(x86), Keep instance type t2 micro (to stay within the free tier)
+* Key Pair: In the dropdown select the keypair `VPCKeyPair`
+* Edit Network Settings: Change the Default VPC to `DemoVPC`, Change subnet to `Private-Subnet-B`, DO NOT enable auto-assign public IP (this is our private instance and it should not have a public IP address)
+* Edit Security Group (SG): Click "Select existing security group", Select the `Private-Instance-SG`,
+* Click "Launch instance" button at the bottom right hand corner
+
+
+
+## ⌛ Test System
+
+We are going to test our infrastructure to make sure we can properly SSH into our Bastion host and our private EC2 instances. We will also make sure our Bastion host and our private instances have access to the internet via the route tables, the internet gateway, and the NAT gateway (private instances only)
+
+## 👉 Step 7 - SSH into Bastion Host and into Private Instances to Test Connectivity
+
+👉 SSH into our Bastion Host using EC2 Connect
+
+EC2 connect is an AWS feature that allows us to easily and securely SSH into our instances without the need of an external SSH client like Putty
+
+* Open the EC2 console
+* Select the `BastionHost`
+* Click the "Connect" button at the top right of the page
+
+
+
+![Screenshot](/img/connect.png)
+
+
+
+* Click "Connect" button at the bottom right of the screen
+
+
+
+![Screenshot](/img/connect_instance.png)
+
+
+* If you get a screen like the one below then you have successfully SSH into your Bastion host
+
+
+
+![Screenshot](/img/test1.png)
+
+
+
+👉 Test if the Bastion Host has access to the internet
+
+* Type "ping www.google.com" and hit Enter into the terminal window. You should receive feedback as shown in the screen shot below.
+* Make sure to hold Ctrl and press "C" to stop the ping.
+* If your outcome is similar to what's shown below then your Bastion host has access to the internet 
+
+
+
+![Screenshot](/img/test2.png)
+
+
+
+👉 SSH into Private Instance A from our Bastion Host
+
+* Type "nano VPCKeyPair.pem" and hit Enter (nano command allows us to create and store a text file within the terminal. We need to upload our VPCKeyPair so we can reference it when we SSH into the Private Instance)
+
+
+
+![Screenshot](/img/test3.png)
+
+
+
+* Go to the VPCKeyPair.pem file saved on your computer. Open it. Copy ALL the content. Paste it into the terminal (hint hold ctrl and shift and press "v")
+
+
+
+![Screenshot](/img/test4.png)
+
+
+
+* Hold ctrl and press "X" to exit. Save the content by press Y for yes. Then press "Enter".
+
+Our uploaded VPCKeyPair.pem text file is formated for others to access it (current chmod access code is 644 - "chmod 644"). It is required that your private key files are NOT accessible by others. Therefore, we must change the access permissions for only us to have access ("chmod 400"). For that we will use the "chmod" command
+
+* Type "chmod 400 VPCKeyPair.pem" and press Enter. This remove access for others and only allows read access to us.
+
+* In a seperate tab, go to the EC2 console
+
+* Select "Private instance A" and copy the private IP address as shown in the screenshot below. We will need to reference this IP address to SSH into it. Go back to the EC2 Connect Window terminal.
+
+Now we are ready to SSH into our Private Instance A via our Bastion host by using our keypair
+
+* Type "ssh ec2-user@INSERT YOUR PRIVATE IP ADDRESS YOU JUST COPIED -i VPCKeyPair.pem". Hit Enter. As an example Your code should look like this (your IP address will be different): "ssh ec2-user@10.0.19.224 -i VPCKeyPair.pem"
+
+* A prompt will come up asking if your are sure you want to connect. Type "yes" and you should have successfully SSH into your Private Instance A via your bastion host.
+
+
+
+![Screenshot](/img/test5.png)
+
+
+
+👉 Test if Private Instance A has access to the internet
+
+* Type "ping www.google.com" and hit Enter into the terminal window. You should receive feedback as shown in the screen shot below.
+* Make sure to hold Ctrl and press "C" to stop the ping.
+If your outcome is similar to what's shown below then your Bastion host has access to the internet 
+
+         🏆🏆🏆🏆🏆🏆
+
+![Screenshot](/img/test6.png)
+
+
+Repeat the Steps 3-4 for Private Instance B if you want to SSH into it and if you want to test if it has access to the internet. NOTE: Remember to use the correct private IP address when executing the "ssh ec2-user@10.0.19.224 -i VPCKeyPair.pem" command.
+
+
+## 💰 Cost
+
+All services used are eligible for the AWS Free Tier. However, charges will incur at some point so it's recommended that you shut down resources after completing this tutorial.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
