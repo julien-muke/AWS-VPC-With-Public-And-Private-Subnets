@@ -299,7 +299,7 @@ For high availability we will create 2 Create NAT Gateway. One in each AZ (One i
 
 
 
-![Screenshot](/img/EC2.png)
+![Screenshot](/img/EC2.jpg)
 
 
 
