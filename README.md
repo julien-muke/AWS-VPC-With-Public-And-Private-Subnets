@@ -328,6 +328,9 @@ Click "Launch instance" button at the bottom right hand corner
 ![Screenshot](/img/private_instances1.png)
 ![Screenshot](/img/private_instances2.png)
 ![Screenshot](/img/private_instances3.png)
+![Screenshot](/img/private_instances4.png)
+![Screenshot](/img/save_ec2.png)
+
 
 
 
