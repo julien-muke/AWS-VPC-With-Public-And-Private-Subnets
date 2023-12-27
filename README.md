@@ -233,6 +233,56 @@ For high availability we will create 2 Create NAT Gateway. One in each AZ (One i
 
 
 
+* Go back to the NAT gateway dashboard and click "Create NAT gateway" button in the top right hand corner
+* Name the 2nd NAT gateway `NAT-Gateway-b`, Select `Public-Subnet-B` that we created in a previous step, click "Allocate Elastic IP" button, and click "Create NAT gateway" button in the bottom right hand corner
+
+
+
+![Screenshot](/img/save_NATB.png)
+
+
+
+### 👉 Connect Route Tables to NAT gateway
+
+* Open the VPC Console
+* Click on "Route tables" on the left-hand panel
+* Select `Private-Route-Table-A`
+* Click the "Actions" dropdown button at the top right hand corner and click "Edit routes"
+
+
+
+![Screenshot](/img/edit_route_table_A.png)
+
+
+
+* Click "Add route", for Destination route select `0.0.0.0/0`, for Target select "NAT Gateway" and select `NAT-Gateway-A`, click "Save changes" button at the bottom right hand corner.
+
+
+
+![Screenshot](/img/save_route_table_A.png)
+
+
+
+* Go back to the Route tables dashboard
+* Select `Private-Route-Table-B`
+* Click "Actions" dropdown button at the top right hand corner and click "Edit routes"
+* Click "Add route", for Destination route select `0.0.0.0/0`, for Target select "NAT Gateway" and select `NAT-Gateway-B`, click "Save changes" button at the bottom right hand corner.
+
+
+
+![Screenshot](/img/save_route_table_B.png)
+
+
+
+✏️  NOTE: The default NACL allows all inbound and all outbound. We will not change the default NACL settings in this lab. Found in VPC console.
+
+
+
+
+
+
+
+
 
 
 
