@@ -346,7 +346,7 @@ Create Private Instance in Private Subnet B
 
 
 
-## ⌛ Test System
+## 🏆 Test System
 
 We are going to test our infrastructure to make sure we can properly SSH into our Bastion host and our private EC2 instances. We will also make sure our Bastion host and our private instances have access to the internet via the route tables, the internet gateway, and the NAT gateway (private instances only)
 
